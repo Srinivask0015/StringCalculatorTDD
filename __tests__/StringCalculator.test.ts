@@ -19,4 +19,9 @@ describe("StringCalculator", () => {
   it("should handle new lines between numbers", () => {
     expect(calculator.add("1\n2,3")).toBe(6);
   });
+  it("should throw an error for negative numbers", () => {
+    expect(() => calculator.add("1,-2,3")).toThrow(
+      "Negative numbers not allowed: -2"
+    );
+  });
 });
